@@ -50,6 +50,10 @@ export function loadState() {
     if (typeof parsed.cookies !== 'number' || typeof parsed.buildings !== 'object' || parsed.buildings === null) {
       return createInitialState();
     }
+    const buildingsValid = BUILDINGS.every(
+      (b) => typeof parsed.buildings[b.id] === 'number' && Number.isFinite(parsed.buildings[b.id])
+    );
+    if (!buildingsValid) return createInitialState();
     return parsed;
   } catch (e) {
     return createInitialState();
