@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>쿠키 클리커</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; background: #fdf6e3; }
+    #cookie-canvas { cursor: pointer; image-rendering: pixelated; }
+    .shop-row { display: flex; justify-content: space-between; max-width: 320px; margin: 8px auto; }
+  </style>
+</head>
+<body>
+  <h1>쿠키 클리커</h1>
+  <p>쿠키: <span id="cookie-count">0</span> (초당 <span id="cps">0</span>)</p>
+  <canvas id="cookie-canvas" width="200" height="200"></canvas>
+  <h2>상점</h2>
+  <div id="shop"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
