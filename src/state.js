@@ -47,11 +47,17 @@ export function loadState() {
   if (!raw) return createInitialState();
   try {
     const parsed = JSON.parse(raw);
-    if (typeof parsed.cookies !== 'number' || typeof parsed.buildings !== 'object' || parsed.buildings === null) {
+    if (
+      typeof parsed.cookies !== 'number' ||
+      !Number.isFinite(parsed.cookies) ||
+      parsed.cookies < 0 ||
+      typeof parsed.buildings !== 'object' ||
+      parsed.buildings === null
+    ) {
       return createInitialState();
     }
     const buildingsValid = BUILDINGS.every(
-      (b) => typeof parsed.buildings[b.id] === 'number' && Number.isFinite(parsed.buildings[b.id])
+      (b) => Number.isInteger(parsed.buildings[b.id]) && parsed.buildings[b.id] >= 0
     );
     if (!buildingsValid) return createInitialState();
     return parsed;

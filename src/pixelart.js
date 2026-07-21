@@ -60,5 +60,8 @@ export function drawCookie(ctx, originX, originY, pixelSize) {
 }
 
 export function drawBuildingIcon(ctx, buildingId, originX, originY, pixelSize) {
-  drawPixelGrid(ctx, BUILDING_GRIDS[buildingId], BUILDING_COLORS[buildingId], originX, originY, pixelSize);
+  const grid = BUILDING_GRIDS[buildingId];
+  const colors = BUILDING_COLORS[buildingId];
+  if (!grid || !colors) return;
+  drawPixelGrid(ctx, grid, colors, originX, originY, pixelSize);
 }
