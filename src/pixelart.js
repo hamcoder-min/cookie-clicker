@@ -27,7 +27,7 @@ const BUILDING_GRIDS = {
   hand: [
     [0, 2, 2, 2, 2, 0],
     [2, 2, 2, 2, 2, 2],
-    [0, 1, 3, 3, 1, 0],
+    [0, 1, 1, 1, 1, 0],
     [0, 0, 2, 2, 0, 0],
     [0, 2, 2, 2, 2, 0],
     [0, 2, 2, 2, 2, 0],
@@ -50,7 +50,7 @@ const BUILDING_GRIDS = {
   ],
 };
 const BUILDING_COLORS = {
-  hand: { 1: '#e8b98d', 2: '#d6d6d6', 3: '#3a2a1a' },
+  hand: { 1: '#e8b98d', 2: '#ffffff' },
   oven: { 1: '#8a8a8a', 2: '#3a2a1a' },
   factory: { 1: '#9c9c9c' },
 };
